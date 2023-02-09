@@ -1,0 +1,159 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+*:focus{
+  outline: none;
+}
+
+body {
+  background-color: #e4fbff;
+  display: grid;
+  place-items: center;
+}
+
+.card-container {
+  width: 40%;
+  height: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* gap: 10px; */
+  padding: 5rem 2rem;
+  transition: 0.3s;
+  border-radius: 2rem;
+  background-color: #F8F9FA;
+}
+
+.card .long-url{
+  caret-color: #6930c3;
+  background-color: #ffffff;
+  border-radius: 6px;
+  border: 1.5px solid #E5E5E5;
+  padding: 10px 30px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+.long-url::placeholder{
+  color: #7868e6;
+  opacity: 100%;
+  text-align: center;
+}
+
+.long-url:focus{
+  outline: none;
+}
+
+.short-btn{
+  padding: 5px 10px;
+  font-size: 1rem;
+  margin: 30px 0;
+  border-radius: 12px;
+  border: 2px solid #3E7E6A;
+  background: #3E7E6A;
+  color: #ffffff;
+  transition: 0.3s all ease;
+  font-family: 'Reggae One', cursive;
+}
+
+.short-btn:hover{
+  border: 2px solid #00917c;
+  background: #00917c;
+}
+
+.card .short-url{
+  width: 100%;
+  border-radius: 6px;
+  border: 1.5px solid #E5E5E5;
+  padding: 10px 30px;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  color: #7868e6;
+  text-align: center;
+}
+
+.short-url::placeholder{
+  color: #7868e6;
+  opacity: 1;
+  text-align: center;
+}
+
+.short-url:focus{
+  outline: none;
+}
+
+.cpy-btn{
+  background: none;
+  border: none;
+}
+
+.cpy-btn:hover{
+  padding: 1px;
+  border-radius: 5px;
+}
+
+.cpy-btn:focus{
+  outline: none;
+}
+
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+}
+
+.copied-succ{
+  color: #00af91;
+  font-family: 'Reggae One', cursive;
+  display: none;
+}
+
+.abt-h1{
+  color: red;
+  font-family: 'Reggae One', cursive;
+}
+
+/* @media screen and (max-width: 980px) {
+
+  .card{
+    left: 0.1rem;
+    width: 25.81rem;
+    border-radius: 0;
+    top: 7rem;
+  }
+
+  .short-btn{
+    width: 10rem;
+    height: 4rem;
+    left: 7.2rem;
+    font-family: sans-serif;
+  }
+
+  .longUrl{
+    background-color: red;
+    height: 20%;
+  }
+
+  .cpy-btn{
+    left: 22rem;
+  }
+
+  .copied-succ{
+    font-family: sans-serif;
+    left: 9rem; 
+  }
+
+} */

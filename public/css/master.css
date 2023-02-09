@@ -1,0 +1,95 @@
+nav{
+  padding: 20px;
+  position: fixed;
+}
+
+.copyright{
+  background-color: #40394a;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 10px 0 10px;
+  color: white;
+  text-align: center;
+}
+
+.copyright p{
+  position: relative;
+  right: 0.8rem;
+}
+
+.ctnme{
+  padding: 5px 10px;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 2px solid #3E7E6A;
+  background: #3E7E6A;
+  transition: 0.3s all ease;
+  font-family: 'Reggae One', cursive;
+}
+.ctnme:hover{
+  padding: 5px 20px;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 2px solid #3E7E6A;
+  background:none;
+  color:#3E7E6A;
+}
+
+
+@media screen and (max-width: 980px){
+
+.ctnme{
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 0;
+  border: 0;
+  background: none;
+  transition: none;
+}
+
+.ctnme:hover{
+  padding: 0;
+  font-size: 1rem;
+  border-radius: 0;
+  border: 0;
+  background:none;
+  color:none;
+}
+
+}
+
+@media (max-width: 947px){
+  .ctnme{
+    padding: 0;
+    font-size: 1rem;
+    border-radius: 0;
+    border: 0;
+    background: none;
+    transition: none;
+  }
+
+  .ctnme:hover{
+    padding: 0;
+    font-size: 1rem;
+    border-radius: 0;
+    border: 0;
+    background:none;
+    color:none;
+  }
+
+}
+
+.navbar li .hme{
+  margin-right: 20px;
+  margin-top: 7px;
+}
+
+body {
+	-youbkit-touch-callout: none;
+	-youbkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
