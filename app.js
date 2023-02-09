@@ -2,9 +2,7 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-// const ejs = require('ejs');
 const mysql = require('mysql');
-// const fs = require('fs');
 const randomString = require('randomstring');
 const { promisify } = require("util");
 
@@ -55,15 +53,6 @@ async function genRandomText(){
   } catch(err) {
     return genRandomText();
   }
-
-  // conn.query(sql, function(err, result){
-  //   if (err) throw err;
-
-  //   const arrayResult = JSON.parse(JSON.stringify(result));
-  //   if(arrayResult.length > 0) {
-  //     return genRandomText();
-  //   }
-  // });
 
   return randomShortUrlString;
 }
@@ -147,11 +136,6 @@ app.get("/:url", async(req, res)=>{
   } catch(err) {
     console.log(err);
   }
-  
-  // conn.query(`SELECT longurl FROM arsenal WHERE shorturl = "${shortUrl}"`, (err,data) => {
-    //   if(err) throw err;
-    //   res.redirect(data[0].longurl);
-  // });
 });
 
 app.get("*", (req, res)=>{
