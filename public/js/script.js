@@ -2,17 +2,27 @@ const floatingCanvasDiv = document.getElementById('floating-canvas');
 const canvas = document.getElementById('canvas');
 const canvasWrapper = document.getElementById('canvasWrapper');
 const longUrl = document.getElementById("longUrl");
+const shortUrl = document.getElementById("rd-shrturl");
 const downloader = document.getElementById("download");
 
-async function copyTextClip() {
+function unsecureCopyToClipboard() {
+  shortUrl.select();
+  document.execCommand("copy");
+  window.getSelection().removeAllRanges();
+}
 
-  const copyText = document.getElementById("rd-shrturl");
+
+async function copyTextClip() {
   
-  text = copyText.value;
+  text = shortUrl.value;
   
-  if(!text || text === '') return;
+  if(text == undefined || !text || text === '') return;
   
-  await navigator.clipboard.writeText(text);
+  if(window.isSecureContext && navigator.clipboard) {
+    await navigator.clipboard.writeText(text);
+  } else {
+    unsecureCopyToClipboard();
+  }
 
   document.getElementById("cpy-succ").style.display = "block";
 }
