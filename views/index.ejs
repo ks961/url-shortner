@@ -20,14 +20,15 @@
       <form action="/app" method="post">
         <div class="card">
             <div>
-              <input class="long-url" type="text" name="longUrl" value="<%=initURL%>" placeholder="URL" size="35">
+              <input id="longUrl" class="long-url" type="text" name="longUrl" value="<%=initURL%>" placeholder="URL" size="35">
             </div>
-            <div>
-              <button class="short-btn" type="submit" name="button">Short URL!</button>
+            <div class="submit-btns">
+              <button class="short-btn" type="submit" name="shortUrl">Short URL!</button>
+              <button class="qrcode-btn" onclick="handleQRcodeGen()" type="button" name="qrCode">QRCode</button>
             </div>
             <div class="" style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px;">
               <input class="short-url" readonly id="rd-shrturl" type="text" name="short-url" size="30" value="<%=shortURL%>" placeholder="Shorten-URL">
-              <button type="button" onclick="copyTextClip()" name="cpy-btn" class="cpy-btn"><i class="fa fa-link" aria-hidden="true"></i></button>
+              <button type="button" onclick="copyTextClip()" name="cpy-btn" class="cpy-btn <%=copyBtnActive%>"><i class="fa fa-link" aria-hidden="true"></i></button>
             </div>
             <div>
               <h5 class="copied-succ" id="cpy-succ">link copied..!</h5>
@@ -35,6 +36,17 @@
           </div>
         </form>
     </div>
+    <div id="floating-canvas" class="floating-canvas">
+    </div>
+    <div id="canvasWrapper" class="canvas-wrapper">
+      <canvas class="canvas" id="canvas"></canvas>
+      <a id="download" download="tinyNET.jpeg">
+        <button class="canvasImgDownloader" type="button" onclick="download()">
+          <img src="assets/download.svg" alt="download">
+        </button>
+      </a>
+    </div>
   </body>
   <script src="js/script.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode/1.5.1/qrcode.min.js" integrity="sha512-PEhlWBZBrQL7flpJPY8lXx8tIN7HWX912GzGhFTDqA3iWFrakVH3lVHomCoU9BhfKzgxfEk6EG2C3xej+9srOQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </html>

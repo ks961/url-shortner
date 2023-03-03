@@ -73,6 +73,7 @@ app.get("/app", (req, res)=>{
   res.render("index", {
     initURL: '',
     shortURL: '',
+    copyBtnActive: '',
   });
 
 });
@@ -102,7 +103,8 @@ app.post("/app", async(req, res)=>{
   
   res.render("index", {
       initURL: url, 
-      shortURL: shortUrl
+      shortURL: shortUrl,
+      copyBtnActive: 'active',
   });
 });
 
@@ -144,5 +146,5 @@ app.get("*", (req, res)=>{
 
 
 app.listen(PORT, ()=>{
-  console.log(`Listening on PORT ${PORT}...`);
+  console.log(`visit: http://${domain}/`);
 });
