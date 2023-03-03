@@ -4,6 +4,7 @@ const canvasWrapper = document.getElementById('canvasWrapper');
 const longUrl = document.getElementById("longUrl");
 const shortUrl = document.getElementById("rd-shrturl");
 const downloader = document.getElementById("download");
+const copyShortUrlBtn = document.getElementById("cpyBtn")
 
 function unsecureCopyToClipboard() {
   shortUrl.select();
@@ -30,7 +31,7 @@ async function copyTextClip() {
 
 function handleQRcodeGen() {
   const text = longUrl.value;
-
+  
   QRCode.toCanvas(canvas, text, function (error) {
     if (error) console.error(error);
     canvasWrapper.classList.add("active");
@@ -44,10 +45,14 @@ function download() {
   downloader.setAttribute("href", image);
 }
 
-
-floatingCanvasDiv.addEventListener('click', ()=> {
+function resetAll() {
   longUrl.value = '';
+  shortUrl.value = '';
+  document.getElementById("cpy-succ").style.display = "none";
   canvas.getContext('2d').reset();
   canvasWrapper.classList.remove("active");
+  copyShortUrlBtn.classList.remove("active");
   floatingCanvasDiv.classList.remove("active");
-});
+}
+
+floatingCanvasDiv.addEventListener('click', resetAll);

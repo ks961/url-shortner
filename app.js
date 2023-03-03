@@ -11,7 +11,8 @@ const app = express();
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
-PORT = 3000;
+
+const PORT = 3000;
 
 const domain = "127.0.0.1:3000";
 
